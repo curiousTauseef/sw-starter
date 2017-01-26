@@ -10,7 +10,7 @@
     "uglifycss": "uglifycss dist/main.css > dist/main.min.css",
     "minify": "minify --output dist/ dist/main.css",
     "dev": "npm run images && webpack --progress --colors --watch",
-    "build": "npm run images && webpack && npm run uglify && npm run uglifycss",
+    "build": "npm run images && webpack && npm run uglify && npm run uglifycss"
   },
   "dependencies": {
     "autoprefixer": "6.3.6",
