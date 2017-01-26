@@ -1,3 +1,4 @@
+/* sw-starter theme webpack config */
 const autoprefixer = require('autoprefixer')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -45,13 +46,11 @@ module.exports = {
         new ExtractTextPlugin('./dist/[name].css'),
         new BrowserSyncPlugin({
             // browse to http://localhost:3000/ during development
-            // host: 'localhost',
-            // port: 3000,
-            // This proxy isn't working. I don't know why.
-            // [http://www.stilldrinking.org/blog_images/code-horror.gif]
+            host: 'localhost',
+            port: 3000,
             notify: false,
             open: false,
-            proxy: 'thefreehand.dev',
+            proxy: 'wegarcia.dev', // Replace with your local wordpress link 
         })
     ],
     postcss: [
