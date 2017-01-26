@@ -1,0 +1,78 @@
+@mixin btn($background: $merino, $color: $shark) {
+    background-color: $background;
+    border: none;
+    color: $color;
+    display: inline-block;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 1rem auto;
+    padding: 1.8rem 3rem;
+    transition: all 0.15s ease-in;
+
+    &:hover,
+    &:focus {
+        background-color: $color;
+        color: $background;
+        text-decoration: none;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        padding: 1.8rem 8rem;
+    }
+}
+
+@mixin titleBasic {
+    color: $tall-poppy;
+    font-family: $trade-gothic;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 8rem;
+        letter-spacing: -0.2rem;
+        line-height: 0.9;
+    }
+}
+
+@mixin titleShadow {
+    font-family: $trade-gothic;
+    font-size: 4em;
+    line-height: 1;
+    text-shadow: 6px 6px 0 $merino;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 8em;
+    }
+}
+
+@mixin titleShadowAndBorder {
+    color: $merino;
+    font-family: $trade-gothic;
+    font-size: 7.25em;
+    line-height: 1;
+    text-shadow: 0 0 2px black, -6px 3px 0 black;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-sm-min) {
+        text-shadow: 0 0 1px black, -6px 3px 0 black;
+        font-size: 10em;
+    }
+}
+
+@mixin subtitleBasic {
+    font-family: $proxima-nova;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 2.5rem;
+        letter-spacing: 0.4rem;
+    }
+}

@@ -1,0 +1,48 @@
+/*
+ * This is the _base.scss file. If you target anything other than a
+ * native html element. You are doing it wrong. (Hart - May, 2016)
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $trade-gothic;
+}
+
+p {
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.6;
+}
+
+body {
+    font-family: $proxima-nova, sans-serif;
+
+    :focus {
+        outline: none;
+    }
+}
+
+#main {
+    background-color: $quarter-pearl-lusta;
+    color: $shark;
+    overflow: hidden;
+
+    @media (min-width: $screen-sm-min) {
+        border-bottom: none;
+    }
+}
+
+#container {
+    @include transition(opacity 0.2s ease-in);
+
+    section {
+        opacity: 1;
+    }
+}
+
+#container.slide-out {
+    opacity: 0.5;
+
+    section:not(.global_nav_top) {
+        opacity: 0;
+    }
+}

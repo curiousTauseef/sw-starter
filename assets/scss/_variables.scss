@@ -1,0 +1,64 @@
+/*
+ * Path to Images
+ */
+$asset-path: "/content/themes/freehand/dist/";
+$image-path: $asset-path + "images/";
+
+/*
+ * FONTS
+ */
+$proxima-nova: "Proxima Nova W01";
+$trade-gothic: "Trade Gothic W01";
+$thirst-script: "Thirsty Script W01";
+
+/* COLORS!
+ * HEY USE THIS THING FOR NAMES. IT IS GOOD.
+ * http://chir.ag/projects/name-that-color/#2e363b
+ */
+$abbey: #4c5155;
+$blumine: #1a626d;
+$buddha-gold: #d28e00;
+$chambray: #37608A;
+$daintree: #012731;
+$dawn: #aca89d;
+$double-spanish-white: #EBE0C7;
+$dusty-gray: #999999;
+$facebook-blue: #3b5998;
+$geebung: #d19021;
+$genoa: #106470;
+$lemon-grass: #91918a;
+$lemon-grass-dark: #979896;
+$merino: #F5EFE1;
+$mirage: #211a2f;
+$outer-space: #293036;
+$oxley: #71a28a;
+$plantation: #296042;
+$pirate-gold: #d08900;
+$tall-poppy: #b82925;
+$quarter-pearl-lusta: #FFFCF5;
+$san-juan: #294267;
+$shark: #1c2023;
+$surf: #b7d7c1;
+$sunflower: #e3c130;
+$storm-dust: #6b6c69;
+$valhalla: #2d1a4b;
+$woodsmoke: #090a0d;
+
+/*
+ * OTHER...
+ */
+$page-width: 1160px;
+$page-width-wide: 1400px;
+$page-width-narrow: 900px;
+$page-width-ultra-narrow: 700px;
+
+$section-margin-mobile: 3rem auto;
+$section-margin-desktop: 12rem auto;
+
+$hero-min-height: 100vh;
+$hero-max-height: 100vh;
+
+$gutter-width: 1.5rem;
+
+$mobile-translator-height: 3.5rem;
+$mobile-header-height: 5rem;
