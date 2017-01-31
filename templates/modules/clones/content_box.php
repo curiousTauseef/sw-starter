@@ -1,5 +1,5 @@
   <?php /* Content Box reusable snippet */ ?>
-  <div class="contentbox col-xs-12 col-md-6 col-centered">
+  <div class="content_box col-xs-10 col-md-4 col-centered">
     <?php if (!empty($layout['sur_title'])) {?>
       <h3 class="text-center"><?php echo $layout['sur_title']; ?></h3>
     <?php  } ?>

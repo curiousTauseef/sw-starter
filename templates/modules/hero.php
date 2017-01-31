@@ -1,5 +1,6 @@
 <!-- includes/hero.php  -->
 <div class="hero">
+    <?php include('clones/content_box.php'); ?>
     <div class="slick-slider hero__slider" id="hero_slider_<?php echo $layout['index']; ?>">
         <?php if(!empty($layout['slides'])){ ?>
             <?php foreach ($layout['slides'] as $slide_key => $slide_value) { ?>
@@ -14,5 +15,5 @@
             <?php } ?>
         <?php } ?>
     </div>
-    <?php include('clones/content_box.php'); ?>
+
 </div>

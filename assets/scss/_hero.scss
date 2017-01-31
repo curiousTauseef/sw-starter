@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    background-color: $quarter-pearl-lusta;
+    background-color: $white;
 
     img {
         height: auto;
@@ -9,6 +9,16 @@
 
     video::-webkit-media-controls-start-playback-button {
         display: none !important;
+    }
+
+    .content_box{
+        position: absolute;
+        z-index: 1;
+        margin: 0 auto;
+        float: none;
+        left: 0;
+        right: 0;
+        bottom: -50px;
     }
 }
 

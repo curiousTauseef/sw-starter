@@ -21,7 +21,7 @@
     }
 
     button:not([class^="picker"]) {
-        @include btn($shark, $quarter-pearl-lusta);
+        @include btn($shark, $white);
     }
 
     ::-webkit-input-placeholder {
