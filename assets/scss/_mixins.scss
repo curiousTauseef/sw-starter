@@ -24,7 +24,7 @@
 
 @mixin titleBasic {
     color: $tall-poppy;
-    font-family: $trade-gothic;
+    font-family: $secondary-font;
     font-size: 4rem;
     font-weight: bold;
     letter-spacing: 0;
@@ -39,7 +39,7 @@
 }
 
 @mixin titleShadow {
-    font-family: $trade-gothic;
+    font-family: $secondary-font;
     font-size: 4em;
     line-height: 1;
     text-shadow: 6px 6px 0 $merino;
@@ -52,7 +52,7 @@
 
 @mixin titleShadowAndBorder {
     color: $merino;
-    font-family: $trade-gothic;
+    font-family: $secondary-font;
     font-size: 7.25em;
     line-height: 1;
     text-shadow: 0 0 2px black, -6px 3px 0 black;
@@ -65,7 +65,7 @@
 }
 
 @mixin subtitleBasic {
-    font-family: $proxima-nova;
+    font-family: $primary-font;
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.2rem;

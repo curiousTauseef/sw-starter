@@ -7,9 +7,11 @@ $image-path: $asset-path + "images/";
 /*
  * FONTS
  */
-$proxima-nova: "Proxima Nova W01";
-$trade-gothic: "Trade Gothic W01";
-$thirst-script: "Thirsty Script W01";
+
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+
+$primary-font: "Roboto";
+$secondary-font: "Raleway";
 
 /* COLORS!
  * HEY USE THIS THING FOR NAMES. IT IS GOOD.

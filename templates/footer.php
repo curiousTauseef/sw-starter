@@ -1,7 +1,6 @@
 <!-- templates/footer.php  -->
 <section class="footer">
-    <div class="footer__top">
-    </div>
+    
     <div class="footer__bottom">
 
 

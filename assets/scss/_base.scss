@@ -4,7 +4,7 @@
  */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $trade-gothic;
+    font-family: $secondary-font;
 }
 
 p {
@@ -14,7 +14,7 @@ p {
 }
 
 body {
-    font-family: $proxima-nova, sans-serif;
+    font-family: $primary-font, sans-serif;
 
     :focus {
         outline: none;

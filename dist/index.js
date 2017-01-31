@@ -16680,7 +16680,9 @@
 	  init: function init() {
 	
 	    var $sliders = document.querySelectorAll('.info_gallery .slick-slider');
-	    var variables = { atuoplay: false };
+	    var variables = {
+	      atuoplay: false,
+	      dots: true };
 	
 	    if ($sliders.length === 0) {
 	

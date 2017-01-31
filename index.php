@@ -2,7 +2,7 @@
 <?php get_template_part('templates/page', 'header'); ?>
 
 <?php function use_custom_content_template($current_post_type) {
-    $post_type_templates_array = array('blog', 'press', 'rooms', 'facebook_events');
+    $post_type_templates_array = array('blog', 'press');
     return in_array($current_post_type, $post_type_templates_array);
 } ?>
 

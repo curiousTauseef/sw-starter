@@ -73,6 +73,27 @@
                                 "class": "",
                                 "id": ""
                             }
+                        },
+                        {
+                            "clone": [
+                                "field_5890b38eb51fa"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block",
+                            "key": "field_5890f35b55223",
+                            "label": "Content Box",
+                            "name": "content_box",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
                         }
                     ],
                     "min": "",
@@ -299,5 +320,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1485879090
+    "modified": 1485894520
 }

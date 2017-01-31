@@ -3,7 +3,9 @@ export default {
     init: function() {
 
       const $sliders = document.querySelectorAll('.info_gallery .slick-slider'); 
-      const variables = {atuoplay: false};
+      const variables = {
+            atuoplay: false, 
+            dots : true };
 
       if($sliders.length === 0 ){
 
