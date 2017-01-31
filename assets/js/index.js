@@ -9,7 +9,7 @@ import instagram from './modules/instagram';
 import info_gallery from './modules/info-gallery';
 
 // Initialize modules here
-window.initAll = function(){
+const initAll = function(){
   hero.init();
   global_nav.init();
   instagram.init();
@@ -35,7 +35,7 @@ window.initAll = function(){
                 }
             },
             onAfter: function( $container ) {
-               window.initAll();
+               initAll();
                NProgress.done();
                $container.removeClass( 'slide-out' );
             }
@@ -52,7 +52,7 @@ window.initAll = function(){
           NProgress.start();
           SPA.init();
           
-          window.initAll();
+          initAll();
 
           setTimeout(function() {
             if($('#container').hasClass('slide-out')){

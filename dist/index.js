@@ -78,7 +78,7 @@
 	
 	
 	// Modules
-	window.initAll = function () {
+	var initAll = function initAll() {
 	  _hero2.default.init();
 	  _globalNav2.default.init();
 	  _instagram2.default.init();
@@ -103,7 +103,7 @@
 	          }
 	        },
 	        onAfter: function onAfter($container) {
-	          window.initAll();
+	          initAll();
 	          _NProgress2.default.done();
 	          $container.removeClass('slide-out');
 	        }
@@ -120,7 +120,7 @@
 	        _NProgress2.default.start();
 	        SPA.init();
 	
-	        window.initAll();
+	        initAll();
 	
 	        setTimeout(function () {
 	          if ($('#container').hasClass('slide-out')) {

@@ -12,7 +12,7 @@ export default {
 
       const slick_slider = new SlickSlider();
 
-      $.each($sliders, (index, slider, ) => {
+      $.each($sliders, (index, slider ) => {
           slick_slider.init(slider)
       });
 
