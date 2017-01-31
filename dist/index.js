@@ -11195,9 +11195,9 @@
 	    }
 	
 	    var slick_slider = new _slick2.default();
-	
+	    var variables = {};
 	    $.each($sliders, function (index, slider) {
-	      slick_slider.init(slider);
+	      slick_slider.init(slider, variables);
 	    });
 	  }
 	};
@@ -16509,7 +16509,7 @@
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -16517,29 +16517,22 @@
 	
 	__webpack_require__(9);
 	
-	var _jquery = __webpack_require__(1);
+	var _slick = __webpack_require__(14);
 	
-	var _jquery2 = _interopRequireDefault(_jquery);
-	
-	var _breakpoints = __webpack_require__(13);
-	
-	var _breakpoints2 = _interopRequireDefault(_breakpoints);
+	var _slick2 = _interopRequireDefault(_slick);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var breakpointSmMax = parseInt(_breakpoints2.default.sm, 10) - 1 + 'px';
-	var breakpointMdMin = _breakpoints2.default.sm;
 	
 	exports.default = {
 	    init: function init() {
 	        var _this = this;
 	
 	        var instafeed = document.getElementsByClassName('instagram');
-	        var $instafeed = (0, _jquery2.default)(instafeed);
+	        var $instafeed = $(instafeed);
 	        var instagram_username = $instafeed.data('instagram_username');
 	        var api_url = '/wp-json/wp/v2/instagram-posts/?filter[meta_key]=instagram_username&filter[meta_value]=' + instagram_username;
 	
-	        var promise = _jquery2.default.ajax({
+	        var promise = $.ajax({
 	            url: api_url
 	        });
 	
@@ -16581,70 +16574,43 @@
 	        return html;
 	    },
 	    initMobileInstagramSlider: function initMobileInstagramSlider() {
-	        (0, _jquery2.default)('.instagram--mobile__slider').each(function (key, el) {
-	            var $instaMobiSlider = (0, _jquery2.default)(el);
-	            $instaMobiSlider.slick({
-	                dots: false,
-	                arrows: true,
-	                slidesToShow: 6,
-	                slidesToScroll: 1,
-	                infinite: true,
-	                responsive: [{
-	                    breakpoint: 768,
-	                    settings: {
-	                        arrows: true,
-	                        centerMode: true,
-	                        centerPadding: '40px',
-	                        slidesToShow: 3
-	                    }
-	                }, {
-	                    breakpoint: 480,
-	                    settings: {
-	                        arrows: false,
-	                        centerMode: true,
-	                        centerPadding: '40px',
-	                        slidesToShow: 1
-	                    }
-	                }]
-	            });
+	        var slick_slider = new _slick2.default();
+	        var variables = {
+	            dots: false,
+	            arrows: true,
+	            slidesToShow: 6,
+	            slidesToScroll: 1,
+	            infinite: true,
+	            autoplay: false,
+	            responsive: [{
+	                breakpoint: 768,
+	                settings: {
+	                    arrows: true,
+	                    centerMode: true,
+	                    centerPadding: '40px',
+	                    slidesToShow: 3
+	                }
+	            }, {
+	                breakpoint: 480,
+	                settings: {
+	                    arrows: false,
+	                    centerMode: true,
+	                    centerPadding: '40px',
+	                    slidesToShow: 1
+	                }
+	            }]
+	        };
+	        $('.instagram--mobile__slider').each(function (key, el) {
+	            var $instaMobiSlider = $(el);
+	            slick_slider.init(el, variables);
 	        });
 	    }
 	
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	var breakpointsBase = exports.breakpointsBase = {
-	    xs: 480,
-	    sm: 768,
-	    md: 992,
-	    lg: 1200
-	};
-	
-	var breakpointsMax = exports.breakpointsMax = {
-	    xs: breakpointsBase.xs - 1 + 'px',
-	    sm: breakpointsBase.sm - 1 + 'px',
-	    md: breakpointsBase.md - 1 + 'px',
-	    lg: breakpointsBase.lg - 1 + 'px'
-	};
-	
-	var breakpointsMin = exports.breakpointsMin = {
-	    xs: breakpointsBase.xs + 'px',
-	    sm: breakpointsBase.sm + 'px',
-	    md: breakpointsBase.md + 'px',
-	    lg: breakpointsBase.lg + 'px'
-	};
-	
-	exports.default = breakpointsMin;
-
-/***/ },
+/* 13 */,
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -16668,7 +16634,7 @@
 	
 	    _createClass(SlickSlider, [{
 	        key: 'init',
-	        value: function init(slider) {
+	        value: function init(slider, variables) {
 	
 	            if (slider === 0) {
 	
@@ -16676,11 +16642,15 @@
 	            }
 	            var $slider = $(slider);
 	
+	            var options = { arrows: false, dots: false, autoplay: true, autoplaySpeed: 3500, infinite: true, speed: 500 };
+	
+	            $.extend(options, variables);
+	
 	            $slider.on('init', function (slick) {
 	                $(slick.target).addClass('loaded');
 	            });
 	
-	            $slider.slick({ arrows: false, dots: false, autoplay: true, autoplaySpeed: 3500, infinite: true, speed: 500 });
+	            $slider.slick(options);
 	        }
 	    }]);
 	
@@ -16710,6 +16680,7 @@
 	  init: function init() {
 	
 	    var $sliders = document.querySelectorAll('.info_gallery .slick-slider');
+	    var variables = { atuoplay: false };
 	
 	    if ($sliders.length === 0) {
 	
@@ -16719,7 +16690,7 @@
 	    var slick_slider = new _slick2.default();
 	
 	    $.each($sliders, function (index, slider) {
-	      slick_slider.init(slider);
+	      slick_slider.init(slider, variables);
 	    });
 	  }
 	};

@@ -1,9 +1,5 @@
 import 'slick-carousel';
-import $ from 'jquery';
-import breakpoints from '../helpers/breakpoints';
-
-const breakpointSmMax = parseInt(breakpoints.sm, 10) - 1 + 'px';
-const breakpointMdMin = breakpoints.sm;
+import SlickSlider from './slick';
 
 export default {
     init: function() {
@@ -54,14 +50,14 @@ export default {
         return html;
     },
     initMobileInstagramSlider: function() {
-        $('.instagram--mobile__slider').each(function(key, el) {
-            const $instaMobiSlider = $(el);
-            $instaMobiSlider.slick({
+        const slick_slider = new SlickSlider();
+        const variables = {
                 dots: false,
                 arrows: true,
                 slidesToShow: 6,
                 slidesToScroll: 1,
                 infinite: true,
+                autoplay: false,
                 responsive: [{
                     breakpoint: 768,
                     settings: {
@@ -79,7 +75,11 @@ export default {
                         slidesToShow: 1
                     }
                 }]
-            });
+            };
+        $('.instagram--mobile__slider').each(function(key, el) {
+            const $instaMobiSlider = $(el);
+            slick_slider.init(el, variables );
+        
         });
     }
 
