@@ -11,7 +11,7 @@ export default {
       }
 
       const slick_slider = new SlickSlider();
-      const variables = {};
+      const variables = {arrows: true};
       $.each($sliders, (index, slider ) => {
           slick_slider.init(slider, variables )
       });

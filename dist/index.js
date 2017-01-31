@@ -11195,7 +11195,7 @@
 	    }
 	
 	    var slick_slider = new _slick2.default();
-	    var variables = {};
+	    var variables = { arrows: true };
 	    $.each($sliders, function (index, slider) {
 	      slick_slider.init(slider, variables);
 	    });
