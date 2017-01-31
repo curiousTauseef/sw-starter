@@ -31,6 +31,11 @@ body {
     }
 }
 
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
 #container {
     @include transition(opacity 0.2s ease-in);
 

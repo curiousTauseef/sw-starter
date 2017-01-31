@@ -13,7 +13,7 @@
 @import "mixins";
 @import "base";
 
-// // Progress bar
+// Progress bar
 // @import "vendor/nprogress/nprogress";
 
 // // Patterns
@@ -30,11 +30,12 @@
 // @import "editorial";
 // @import "feature";
 // @import "footer";
-// @import "global-nav";
+@import "global-nav";
 @import "hero";
 
-// @import "instagram";
-// @import "instagram-album";
+@import "instagram";
+
+//@import "instagram-album";
 // @import "mobile-translator";
 // @import "mobile-header";
 // @import "mobile-social-list";

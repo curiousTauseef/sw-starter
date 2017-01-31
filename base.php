@@ -16,7 +16,7 @@
 
         <div id="container">
             <?php do_action('get_header'); ?>
-            <?php get_template_part('templates/header'); ?>HERE
+            <?php get_template_part('templates/header'); ?>
             
             <main id="main">
                 <?php include Wrapper\template_path(); ?>

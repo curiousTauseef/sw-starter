@@ -34,34 +34,6 @@ function initSliderAndSliderNav(slider) {
 
     const $cinemagraphs = $slider.data('cinemagraphs');
     const $fallback_image = $slider.data('fallback');
-
-    if($cinemagraphs.length > 0){
-
-        const rand_cinamegraph = $cinemagraphs[Math.floor(Math.random() * $cinemagraphs.length)]; 
-            
-         $slider.css( 'background-image' , (rand_cinamegraph.poster ? `url(${rand_cinamegraph.poster.url})` : '' ) );
-        
-         var slide = '<video class="hidden-xs visible-sm visible-md visible-lg" poster="' + (rand_cinamegraph.poster ? rand_cinamegraph.poster.url  : '' ) + '" width="100%" preload="auto" loop autoplay muted>'
-         + '<source src="' + rand_cinamegraph.movie + '" type="video/mp4">'
-         + '</video>';
-         
-
-
-         if(rand_cinamegraph.poster){
-             slide = slide + '<div class="visible-xs hidden-sm hidden-md hidden-lg" style="background-image: url('+ rand_cinamegraph.poster.sizes.medium_large +'); background-size: cover;">'
-             + '</div>';
-            
-         }else if($fallback_image){
-            slide = slide + '<div class="visible-xs hidden-sm hidden-md hidden-lg" style="background-image: url('+ $fallback_image +'); background-size: cover;">'
-             + '</div>';
-            
-         }
-        
-
-        
-         $slider.append(slide);
-       
-    }
     
     if ($slider.length > 0) {
         $slider.addClass('loaded');

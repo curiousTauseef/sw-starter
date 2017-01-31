@@ -26,6 +26,7 @@ $sage_includes = [
     'lib/contact-form-handler.php',         // Contact Form handler
     'lib/sessions-form-handler.php',        // Sessions Form handler
     'lib/layouts.php',                      // Layout wrapper
+    'lib/rest.php'                          // REST API filters
 ];
 
 foreach ($sage_includes as $file) {
@@ -292,3 +293,7 @@ function be_menu_item_classes( $classes, $item, $args ) {
     return array_unique( $classes );
 }
 add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
+
+
+
+

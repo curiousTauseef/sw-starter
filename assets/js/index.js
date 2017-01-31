@@ -1,10 +1,16 @@
+import '../scss/main.scss';
 import smoothState from 'smoothState';
 import NProgress from 'NProgress';
+
 // Modules
 import hero from './modules/hero';
+import global_nav from './modules/global-nav';
+import instagram from './modules/instagram';
 // Initialize modules here
 window.initAll = function(){
   hero.init();
+  global_nav.init();
+  instagram.init();
 };
 //DOM-based Routing
 (function($) {

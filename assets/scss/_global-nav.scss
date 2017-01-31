@@ -1,0 +1,11 @@
+.navbar-default {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    border-radius: 0px;
+    background-color: $quarter-pearl-lusta;
+
+    .current-menu-item {
+        background-color: $double-spanish-white;
+    }
+}

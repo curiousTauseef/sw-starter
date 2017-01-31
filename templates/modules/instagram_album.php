@@ -16,7 +16,6 @@ if ($instagram_username) {
     $query_args['meta_compare'] = '=';
 }
 
-switch_to_blog(MAIN_SITE_ID);
 
 $instagram_query = new WP_Query( $query_args );
 
@@ -40,7 +39,7 @@ if( $instagram_query->have_posts() ): ?>
         <?php if ($instagram_username): ?>
             <div class="instagram-album__cta-wrapper">
                 <a class="instagram-album__cta" href="http://instagram.com/<?php echo $instagram_username ?>"
-                target="_blank">View More</a>
+                target="_blank">View More??</a>
             </div>
         <?php endif; ?>
 
@@ -51,5 +50,3 @@ if( $instagram_query->have_posts() ): ?>
     <!-- No instagram posts found -->
 
 <?php endif; ?>
-
-<?php restore_current_blog(); ?>
