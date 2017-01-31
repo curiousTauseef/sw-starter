@@ -1,5 +1,5 @@
 <?php
-
+namespace Roots\Sage\Environment;
 /*
  * Layouts Section Wrapper
  * Loop trough the ACF Layouts and includes the template module
@@ -16,7 +16,7 @@ if( isset($layout['layout_css_class']) ){
 $path_to_template = locate_template('templates/modules/' . $layout_name . '.php');
 
 if ( file_exists($path_to_template) ) { ?>
-
+    <?php echo (Environment::isLocal() ? '<pre style="background-color:red; color:white; position:absolute;float:right;">'.$layout_name.'</pre>' : ''); ?>
     <section id="<?php echo $nav_slug; ?>" name="<?php echo $nav_slug; ?>" class="<?php echo $section_classes; ?> <?php echo $layout['index'] == 0 && $layout['acf_fc_layout'] == 'global_nav' ? 'global_nav_top' : '' ?>">
 
         <?php include($path_to_template); ?>

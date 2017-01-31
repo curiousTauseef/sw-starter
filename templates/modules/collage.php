@@ -1,6 +1,6 @@
 <!-- includes/collage.php -->
 <div class="collage container">
-  <?php include('contentbox.php'); ?>
+  <?php include('clones/content_box.php'); ?>
   <?php if (!empty($layout['images'])){ ?>
   <div class="images">
     <?php foreach($layout['images'] as $k => $image){ ?>

@@ -1,6 +1,6 @@
 {
     "key": "group_588f866e8af2f",
-    "title": "CTAs",
+    "title": "Clones",
     "fields": [
         {
             "sub_fields": [
@@ -60,6 +60,87 @@
                 "class": "",
                 "id": ""
             }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_5890b339517bc",
+            "label": "Sur Title",
+            "name": "sur_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_5890b332517bb",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_5890b34a38f98",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "clone": [
+                "field_5890b339517bc",
+                "field_5890b332517bb",
+                "field_5890b34a38f98",
+                "field_588f8671235d1"
+            ],
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "display": "seamless",
+            "layout": "block",
+            "key": "field_5890b38eb51fa",
+            "label": "Content Box",
+            "name": "content_box",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -79,5 +160,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1485801216
+    "modified": 1485878284
 }

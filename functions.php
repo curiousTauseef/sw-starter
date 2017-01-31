@@ -16,15 +16,12 @@ $sage_includes = [
     'lib/assets.php',                       // Scripts and stylesheets
     'lib/custom-post-type.php',             // Custom post type
     'lib/custom-taxonomies.php',            // Custom Taxonomies
-    'lib/custom-fields.php',                // Custom fields
+    //'lib/custom-fields.php',                // Custom fields
     'lib/extras.php',                       // Custom functions
     'lib/setup.php',                        // Theme setup
     'lib/titles.php',                       // Page titles
     'lib/wrapper.php',                      // Theme wrapper class
     'lib/customizer.php',                   // Theme customizer
-    'lib/triple-seat-form-handler.php',     // Triple Seat Form handler
-    'lib/contact-form-handler.php',         // Contact Form handler
-    'lib/sessions-form-handler.php',        // Sessions Form handler
     'lib/layouts.php',                      // Layout wrapper
     'lib/rest.php'                          // REST API filters
 ];

@@ -1,6 +1,6 @@
 <!-- includes/hero.php  -->
 <div class="hero">
-    <div class="hero__slider" id="hero_slider_<?php echo $layout['index']; ?>">
+    <div class="slick-slider hero__slider" id="hero_slider_<?php echo $layout['index']; ?>">
             <?php if(!empty($layout['slides'])){ ?>
                 <?php foreach ($layout['slides'] as $slide_key => $slide_value) { ?>
                     <?php $url = isset($slide_value['image']['sizes']) ? $slide_value['image']['sizes']['large'] : false;  ?>

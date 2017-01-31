@@ -6,11 +6,15 @@ import NProgress from 'NProgress';
 import hero from './modules/hero';
 import global_nav from './modules/global-nav';
 import instagram from './modules/instagram';
+import info_gallery from './modules/info-gallery';
+
 // Initialize modules here
 window.initAll = function(){
   hero.init();
   global_nav.init();
   instagram.init();
+  info_gallery.init();
+  
 };
 //DOM-based Routing
 (function($) {

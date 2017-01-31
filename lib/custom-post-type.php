@@ -37,32 +37,14 @@ function custom_post_type_setup() {
             'plural_label' => 'Rooms',
             'exclude_sites' => [],
             'has_archive' => false
-        ),
-        array(
-            'name' => 'event-spaces',
-            'singular_label' => 'Event Space',
-            'plural_label' => 'Event Spaces',
-            'exclude_sites' => [],
-            'has_archive' => false
-        ),
-        array(
-            'name' => 'activities',
-            'singular_label' => 'Activity',
-            'plural_label' => 'Activities',
-            'exclude_sites' => []
-        ),
+        ),      
         array(
             'name' => 'instagram-posts',
             'singular_label' => 'Instagram Post',
             'plural_label' => 'Instagram Posts',
             'exclude_sites' => [2,3,4,5]
         ),
-        array(
-            'name' => 'newsletters',
-            'singular_label' => 'Newsletter',
-            'plural_label' => 'Newsletters',
-            'exclude_sites' => [2,4,5]
-        ),
+       
     );
 
   foreach ($post_types as $post_type) {

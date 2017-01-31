@@ -68,18 +68,23 @@
 	
 	var _instagram2 = _interopRequireDefault(_instagram);
 	
+	var _infoGallery = __webpack_require__(15);
+	
+	var _infoGallery2 = _interopRequireDefault(_infoGallery);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// Initialize modules here
+	
+	
+	// Modules
 	window.initAll = function () {
 	  _hero2.default.init();
 	  _globalNav2.default.init();
 	  _instagram2.default.init();
+	  _infoGallery2.default.init();
 	};
 	//DOM-based Routing
-	
-	
-	// Modules
 	(function ($) {
 	  // Use this variable to set up the common and page specific functions. If you
 	  // rename this variable, you will also need to rename the namespace below.
@@ -11170,79 +11175,31 @@
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
-	__webpack_require__(9);
+	var _slick = __webpack_require__(14);
 	
-	// Finds Y value of given object
-	function findPos(obj) {
-	    var curtop = 0;
-	    if (obj.offsetParent) {
-	        do {
-	            curtop += obj.offsetTop;
-	        } while (obj = obj.offsetParent);
-	        return [curtop];
-	    }
-	}
+	var _slick2 = _interopRequireDefault(_slick);
 	
-	function toggleMobilePropertyNav(event) {
-	
-	    event.preventDefault();
-	    $('.hotel-property-nav ul').toggleClass('hotel-property-nav__list--visible');
-	
-	    var $arrow = $(this).find('.hotel-property-nav__mobile__trigger__arrow');
-	    var arrowDownClassName = 'hotel-property-nav__mobile__trigger__arrow--down';
-	    var arrowUpClassName = 'hotel-property-nav__mobile__trigger__arrow--up';
-	
-	    if ($arrow.hasClass(arrowDownClassName)) {
-	        $arrow.removeClass(arrowDownClassName);
-	        $arrow.addClass(arrowUpClassName);
-	    } else {
-	        $arrow.removeClass(arrowUpClassName);
-	        $arrow.addClass(arrowDownClassName);
-	    }
-	}
-	
-	function initSliderAndSliderNav(slider) {
-	    var $slider = $(slider);
-	
-	    var $cinemagraphs = $slider.data('cinemagraphs');
-	    var $fallback_image = $slider.data('fallback');
-	
-	    if ($slider.length > 0) {
-	        $slider.addClass('loaded');
-	    }
-	
-	    if ($slider.find('> .hero__slider__slide').length <= 1) {
-	        return false;
-	    }
-	
-	    var $sliderNav = $slider.parent().find('.hero__slider-nav');
-	    var sliderOptions = { arrows: false, dots: false, autoplay: true, autoplaySpeed: 3500, infinite: true, speed: 500 };
-	
-	    $slider.slick(sliderOptions);
-	
-	    $sliderNav.on('click', '.hero__slider-nav__prev', function () {
-	        $slider.slick('slickPrev');
-	    });
-	
-	    $sliderNav.on('click', '.hero__slider-nav__next', function () {
-	        $slider.slick('slickNext');
-	    });
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	    init: function init() {
+	  init: function init() {
 	
-	        $('.hotel-property-nav__mobile__trigger').on('click', toggleMobilePropertyNav);
+	    var $sliders = document.querySelectorAll('.hero .slick-slider');
 	
-	        var heroSliders = document.getElementsByClassName('hero__slider');
+	    if ($sliders.length === 0) {
 	
-	        $.each(heroSliders, function (index, slider) {
-	            initSliderAndSliderNav(slider);
-	        });
+	      return false;
 	    }
+	
+	    var slick_slider = new _slick2.default();
+	
+	    $.each($sliders, function (index, slider) {
+	      slick_slider.init(slider);
+	    });
+	  }
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
@@ -16686,6 +16643,87 @@
 	};
 	
 	exports.default = breakpointsMin;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	__webpack_require__(9);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	// SlickSlider is a base class
+	var SlickSlider = function () {
+	    function SlickSlider() {
+	        _classCallCheck(this, SlickSlider);
+	    }
+	
+	    _createClass(SlickSlider, [{
+	        key: 'init',
+	        value: function init(slider) {
+	
+	            if (slider === 0) {
+	
+	                return false;
+	            }
+	            var $slider = $(slider);
+	
+	            $slider.on('init', function (slick) {
+	                $(slick.target).addClass('loaded');
+	            });
+	
+	            $slider.slick({ arrows: false, dots: false, autoplay: true, autoplaySpeed: 3500, infinite: true, speed: 500 });
+	        }
+	    }]);
+	
+	    return SlickSlider;
+	}();
+	
+	exports.default = SlickSlider;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _slick = __webpack_require__(14);
+	
+	var _slick2 = _interopRequireDefault(_slick);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  init: function init() {
+	
+	    var $sliders = document.querySelectorAll('.info_gallery .slick-slider');
+	
+	    if ($sliders.length === 0) {
+	
+	      return false;
+	    }
+	
+	    var slick_slider = new _slick2.default();
+	
+	    $.each($sliders, function (index, slider) {
+	      slick_slider.init(slider);
+	    });
+	  }
+	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }
 /******/ ]);
