@@ -16,7 +16,7 @@ $sage_includes = [
     'lib/assets.php',                       // Scripts and stylesheets
     'lib/custom-post-type.php',             // Custom post type
     'lib/custom-taxonomies.php',            // Custom Taxonomies
-    //'lib/custom-fields.php',                // Custom fields
+    //'lib/custom-fields.php',                // Custom fields // Using json for now
     'lib/extras.php',                       // Custom functions
     'lib/setup.php',                        // Theme setup
     'lib/titles.php',                       // Page titles
