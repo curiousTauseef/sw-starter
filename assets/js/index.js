@@ -1,7 +1,12 @@
+// Stylesheets
 import '../scss/main.scss';
+import '../fonts/font-awesome/scss/font-awesome.scss';
+// SPA helper modules
 import smoothState from 'smoothState';
 import NProgress from 'NProgress';
 
+// Config values
+import config from './config';
 // Modules
 import hero from './modules/hero';
 import global_nav from './modules/global-nav';
@@ -14,8 +19,8 @@ const initAll = function(){
   global_nav.init();
   instagram.init();
   info_gallery.init();
-  
 };
+
 //DOM-based Routing
 (function($) {
   // Use this variable to set up the common and page specific functions. If you
@@ -50,7 +55,10 @@ const initAll = function(){
     'common': {
       init: function() {
           NProgress.start();
-          SPA.init();
+          
+          if(config.useSPA){
+            SPA.init();
+          }
           
           initAll();
 

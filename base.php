@@ -18,7 +18,7 @@
             <?php do_action('get_header'); ?>
             <?php get_template_part('templates/header'); ?>
             
-            <main id="main">
+            <main id="main" <?php echo get_field('options','background_image') ? 'style="background-image:url(' .get_field('options','background_image').')"' : ''; ?>>
                 <?php include Wrapper\template_path(); ?>
             </main>
 

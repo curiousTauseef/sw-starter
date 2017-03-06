@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "images": "cp -r assets/images dist/.",
+    "fonts" : "cp -r assets/fonts dist/.",
     "uglify": "uglifyjs dist/index.js -o dist/index.min.js --compress=sequences,properties,dead_code,conditionals,comparisons,booleans,loops,unused,if_return,join_vars,warnings,cascade,collapse_vars,drop_console --mangle",
     "uglifycss": "uglifycss dist/main.css > dist/main.min.css",
     "minify": "minify --output dist/ dist/main.css",
@@ -23,6 +24,7 @@
     "css-loader": "^0.23.0",
     "enquire.js": "^2.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "flag-icon-css": "^2.3.0",
     "google-maps-api-loader": "^0.2.0",
     "jquery": "^2.2.3",
@@ -57,6 +59,8 @@
     "jscs-loader": "^0.3.0",
     "jshint": "^2.9.2",
     "jshint-loader": "^0.8.3",
-    "uglify-js": "^2.6.2"
+    "resolve-url": "^0.2.1",
+    "uglify-js": "^2.6.2",
+    "url-loader": "^0.5.7"
   }
 }

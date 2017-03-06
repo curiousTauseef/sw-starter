@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "../";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -48,34 +48,39 @@
 	
 	__webpack_require__(2);
 	
-	var _smoothState = __webpack_require__(6);
+	__webpack_require__(6);
+	
+	var _smoothState = __webpack_require__(14);
 	
 	var _smoothState2 = _interopRequireDefault(_smoothState);
 	
-	var _NProgress = __webpack_require__(7);
+	var _NProgress = __webpack_require__(15);
 	
 	var _NProgress2 = _interopRequireDefault(_NProgress);
 	
-	var _hero = __webpack_require__(8);
+	var _config = __webpack_require__(23);
+	
+	var _config2 = _interopRequireDefault(_config);
+	
+	var _hero = __webpack_require__(16);
 	
 	var _hero2 = _interopRequireDefault(_hero);
 	
-	var _globalNav = __webpack_require__(10);
+	var _globalNav = __webpack_require__(19);
 	
 	var _globalNav2 = _interopRequireDefault(_globalNav);
 	
-	var _instagram = __webpack_require__(12);
+	var _instagram = __webpack_require__(21);
 	
 	var _instagram2 = _interopRequireDefault(_instagram);
 	
-	var _infoGallery = __webpack_require__(15);
+	var _infoGallery = __webpack_require__(22);
 	
 	var _infoGallery2 = _interopRequireDefault(_infoGallery);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// Initialize modules here
-	
 	
 	// Modules
 	var initAll = function initAll() {
@@ -84,7 +89,14 @@
 	  _instagram2.default.init();
 	  _infoGallery2.default.init();
 	};
+	
 	//DOM-based Routing
+	
+	
+	// Config values
+	
+	// SPA helper modules
+	// Stylesheets
 	(function ($) {
 	  // Use this variable to set up the common and page specific functions. If you
 	  // rename this variable, you will also need to rename the namespace below.
@@ -118,7 +130,10 @@
 	    'common': {
 	      init: function init() {
 	        _NProgress2.default.start();
-	        SPA.init();
+	
+	        if (_config2.default.useSPA) {
+	          SPA.init();
+	        }
 	
 	        initAll();
 	
@@ -9999,6 +10014,19 @@
 /* 4 */,
 /* 5 */,
 /* 6 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {/**
@@ -10687,7 +10715,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 7 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
@@ -11169,42 +11197,109 @@
 
 
 /***/ },
-/* 8 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	
-	var _slick = __webpack_require__(14);
+	var _slick = __webpack_require__(17);
 	
 	var _slick2 = _interopRequireDefault(_slick);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  init: function init() {
+	    init: function init() {
 	
-	    var $sliders = document.querySelectorAll('.hero .slick-slider');
+	        var $sliders = document.querySelectorAll('.hero .slick-slider');
 	
-	    if ($sliders.length === 0) {
+	        if ($sliders.length === 0) {
 	
-	      return false;
+	            return false;
+	        }
+	
+	        var slick_slider = new _slick2.default();
+	        var variables = {
+	            arrows: true,
+	            responsive: [{
+	                breakpoint: 768,
+	                settings: {
+	                    arrows: false
+	                }
+	            }]
+	
+	        };
+	        $.each($sliders, function (index, slider) {
+	            slick_slider.init(slider, variables);
+	        });
 	    }
-	
-	    var slick_slider = new _slick2.default();
-	    var variables = { arrows: true };
-	    $.each($sliders, function (index, slider) {
-	      slick_slider.init(slider, variables);
-	    });
-	  }
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 9 */
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	__webpack_require__(18);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	// SlickSlider is a base class
+	var SlickSlider = function () {
+	    function SlickSlider() {
+	        _classCallCheck(this, SlickSlider);
+	    }
+	
+	    _createClass(SlickSlider, [{
+	        key: 'init',
+	        value: function init(slider, variables) {
+	
+	            if (slider === 0) {
+	
+	                return false;
+	            }
+	            var $slider = $(slider);
+	
+	            var options = { arrows: false,
+	                dots: false,
+	                autoplay: true,
+	                autoplaySpeed: 3500,
+	                infinite: true,
+	                speed: 500,
+	                nextArrow: '<button class="slick-next fa fa-angle-right"></button>',
+	                prevArrow: '<button class="slick-prev fa fa-angle-left"></button>'
+	            };
+	
+	            $.extend(options, variables);
+	
+	            $slider.on('init', function (slick) {
+	                $(slick.target).addClass('loaded');
+	            });
+	
+	            $slider.slick(options);
+	        }
+	    }]);
+	
+	    return SlickSlider;
+	}();
+	
+	exports.default = SlickSlider;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -14102,7 +14197,7 @@
 
 
 /***/ },
-/* 10 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -14111,7 +14206,7 @@
 	    value: true
 	});
 	
-	var _bootstrapSass = __webpack_require__(11);
+	var _bootstrapSass = __webpack_require__(20);
 	
 	exports.default = {
 	    init: function init() {
@@ -14122,7 +14217,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 11 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {/*!
@@ -16506,7 +16601,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 12 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -16515,9 +16610,9 @@
 	    value: true
 	});
 	
-	__webpack_require__(9);
+	__webpack_require__(18);
 	
-	var _slick = __webpack_require__(14);
+	var _slick = __webpack_require__(17);
 	
 	var _slick2 = _interopRequireDefault(_slick);
 	
@@ -16610,58 +16705,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 13 */,
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	__webpack_require__(9);
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	// SlickSlider is a base class
-	var SlickSlider = function () {
-	    function SlickSlider() {
-	        _classCallCheck(this, SlickSlider);
-	    }
-	
-	    _createClass(SlickSlider, [{
-	        key: 'init',
-	        value: function init(slider, variables) {
-	
-	            if (slider === 0) {
-	
-	                return false;
-	            }
-	            var $slider = $(slider);
-	
-	            var options = { arrows: false, dots: false, autoplay: true, autoplaySpeed: 3500, infinite: true, speed: 500 };
-	
-	            $.extend(options, variables);
-	
-	            $slider.on('init', function (slick) {
-	                $(slick.target).addClass('loaded');
-	            });
-	
-	            $slider.slick(options);
-	        }
-	    }]);
-	
-	    return SlickSlider;
-	}();
-	
-	exports.default = SlickSlider;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ },
-/* 15 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -16670,7 +16714,7 @@
 	  value: true
 	});
 	
-	var _slick = __webpack_require__(14);
+	var _slick = __webpack_require__(17);
 	
 	var _slick2 = _interopRequireDefault(_slick);
 	
@@ -16697,6 +16741,21 @@
 	  }
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// Use this file to setup config values.
+	exports.default = {
+	    useSPA: true,
+	    foo: 'bar'
+	};
 
 /***/ }
 /******/ ]);

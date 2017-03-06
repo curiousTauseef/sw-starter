@@ -8,7 +8,8 @@ const webpack = require('webpack');
 module.exports = {
     entry: './assets/js/index.js',
     output: {
-        filename: 'dist/index.js'
+        filename: 'dist/index.js',
+        publicPath : '../'
     },
     devtool: "source-map",
     module: {
@@ -36,7 +37,18 @@ module.exports = {
             query: {
                 presets: ['es2015']
             }
-        },]
+        }, 
+
+        {   
+            test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+            loader: 'file-loader?name=./dist/fonts/[name].[ext]' 
+        },
+        {   
+            test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+            loader: "file-loader?name=./dist/fonts/[name].[ext]" 
+        }
+
+      ]
     },
     plugins: [
         new webpack.ProvidePlugin({
@@ -50,7 +62,7 @@ module.exports = {
             port: 3000,
             notify: false,
             open: false,
-            proxy: 'wegarcia.dev', // Replace with your local wordpress link 
+            proxy: 'townhouse.dev', // Replace with your local wordpress link 
         })
     ],
     postcss: [

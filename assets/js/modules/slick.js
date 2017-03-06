@@ -11,7 +11,15 @@ class SlickSlider {
         }
         const $slider = $(slider);
         
-        var options = { arrows: false, dots: false, autoplay: true, autoplaySpeed: 3500,  infinite: true, speed: 500 };
+        var options = { arrows: false, 
+                        dots: false,
+                        autoplay: true,
+                        autoplaySpeed: 3500,
+                        infinite: true,
+                        speed: 500,
+                        nextArrow: '<button class="slick-next fa fa-angle-right"></button>',
+                        prevArrow: '<button class="slick-prev fa fa-angle-left"></button>'
+                    };
 
         $.extend( options, variables ); 
 

@@ -11,7 +11,16 @@ export default {
       }
 
       const slick_slider = new SlickSlider();
-      const variables = {arrows: true};
+      const variables = {
+          arrows: true,
+          responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                    }
+                }]
+
+        };
       $.each($sliders, (index, slider ) => {
           slick_slider.init(slider, variables )
       });

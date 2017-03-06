@@ -20,6 +20,10 @@
         right: 0;
         bottom: -50px;
     }
+
+    .slick-prev:before, .slick-next:before{
+        font-size: 12em;
+    }
 }
 
 @media screen and (max-width: 1024px) {
