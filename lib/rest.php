@@ -1,4 +1,4 @@
-<?php 
+<?php // Custom functions to manage RESTful requests to wp-json API.
 function wp_json_namespace_v2__init()
 {
 

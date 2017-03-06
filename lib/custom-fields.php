@@ -1,13 +1,8 @@
 <?php
 
-// load custom fields
-// require_once 'custom-fields--layouts.php';
-require_once 'custom-fields--meta.php';
-require_once 'custom-fields--press.php';
-require_once 'custom-fields--press-items.php';
-require_once 'custom-fields--room.php';
-require_once 'custom-fields--newsletters.php';
-
+// load custom fields - For production: xport and add here after doing the editing on the ACF plugin admin page
+// require_once 'acf/custom-fields--layouts.php';
+// require_once 'acf/custom-fields--foo.php';
 // put message in ACF interface to warn people to edit custom fields here
 function acf_warning( $hook ) {
     if ('edit.php' != $hook) {
