@@ -1,10 +1,5 @@
 <?php
 namespace Roots\Sage\Environment;
-
-define('LOCAL', serialize(array('local.wegarcia.com', 'wegarcia.dev', 'localhost:3000')));
-define('DEVELOPMENT', serialize( array('wegarcia-dev.sidewaysdigital.com' )));
-define('STAGE', serialize( array('wegarcia-stage.sidewaysdigital.com')));
-
 /**
      * This class helps you to config your application
      * environment.
